@@ -4,31 +4,26 @@
       <%= link_to root_path, class: 'navbar-item' do %>
         <img id="logo" :src="logo" alt="Snibox"/>
       <% end %>
-      <search-box class="navbar-item is-hidden-desktop"></search-box>
-      <% if user_signed_in? %>
+      <search-box class="navbar-item is-hidden-desktop"></search-box>      
         <div class="navbar-burger burger" data-target="navbar-menu">
           <span></span>
           <span></span>
           <span></span>
-        </div>
-      <% end %>
+        </div>      
     </div>
-
-    <% if user_signed_in? %>
-      <div id="navbar-menu" class="navbar-menu">
-        <div class="navbar-start">
-          <%= link_to "Dashboard", root_path, id: "dashboard", class: "navbar-item #{is_active_page(root_path)}" %>
-          <a id="snippet-new" class="navbar-item" href="#" @click="addSnippet($event, <%= !current_page?(root_path) %>)">
-            Add snippet
-          </a>
-        </div>
-        <div class="navbar-end">
-          <search-box class="navbar-item is-hidden-mobile is-hidden-tablet-only"></search-box>
-          <%= link_to "Help", help_path, id: "help", class: "navbar-item #{is_active_page(help_path)}" %>
-          <%= link_to "Settings", edit_user_registration_path, id: "settings", class: "navbar-item #{is_active_page(edit_user_registration_path)}" %>
-          <%= link_to('Logout', destroy_user_session_path, method: :delete, id: :logout, class: "navbar-item") %>
-        </div>
+    
+    <div id="navbar-menu" class="navbar-menu">
+      <div class="navbar-start">
+        <%= link_to "Dashboard", root_path, id: "dashboard", class: "navbar-item #{is_active_page(root_path)}" %>
+        <a id="snippet-new" class="navbar-item" href="#" @click="addSnippet($event, <%= !current_page?(root_path) %>)">
+          Add snippet
+        </a>
       </div>
-    <% end %>
+      <div class="navbar-end">
+        <search-box class="navbar-item is-hidden-mobile is-hidden-tablet-only"></search-box>
+        <%= link_to "Help", help_path, id: "help", class: "navbar-item #{is_active_page(help_path)}" %>        
+        <%= link_to('Logout', gatekeeper.logout_path, method: :delete, id: :logout, class: "navbar-item") %>
+      </div>
+    </div>    
   </div>
 </nav>

@@ -28,11 +28,3 @@ Dir[SNIPPETS_PATH].each do |path|
   )
 end
 
-if ENV['DEMO'].present?
-  User.delete_all
-
-  User.create(
-    email: ENV['DEMO_EMAIL'],
-    password: ENV['DEMO_PASSWORD']
-  )
-end

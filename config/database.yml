@@ -15,11 +15,15 @@
 # gem 'pg'
 #
 default: &default
-  adapter: postgresql
-  encoding: unicode
+  adapter: mysql2
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  database: <%= ENV['DB_NAME'].presence || 'snibox_development' %>
+  username: <%= ENV['DB_USER'].presence || 'snibox' %>
+  password: <%= ENV['DB_PASS'].presence || '' %>
+  host: <%= ENV['DB_HOST'].presence || 'localhost' %>
+  port: <%= ENV['DB_PORT'].presence || '3306' %>
 
 development:
   <<: *default
@@ -81,7 +85,3 @@ test:
 production:
   <<: *default
   database: <%= ENV['DB_NAME'].presence || 'snibox_production' %>
-  username: <%= ENV['DB_USER'].presence || 'snibox' %>
-  password: <%= ENV['DB_PASS'].presence || '' %>
-  host: <%= ENV['DB_HOST'].presence || 'localhost' %>
-  port: <%= ENV['DB_PORT'].presence || '5432' %>

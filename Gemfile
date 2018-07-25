@@ -8,16 +8,18 @@ end
 ruby '~> 2.5.1'
 
 gem 'rails', '~> 5.2.0'
-gem 'pg', '~> 1.0'
+gem 'mysql2'
 gem 'puma', '~> 3.11'
 
 gem 'active_model_serializers', '~> 0.10.7'
 gem 'bootsnap', '~> 1.3', require: false
 gem 'counter_culture', '~> 1.12'
-gem 'devise', '~> 4.3'
 gem 'dotenv-rails', '~> 2.5'
 gem 'uglifier', '~> 4.1'
 gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
+
+gem 'gatekeeper', git: 'git@github.com:websend/gatekeeper', tag: 'r5av1.3.5'
+gem 'omniauth-microsoft_v2_auth', git: 'git@github.com:websend/omniauth-microsoft_v2_auth.git'
 
 group :development do
   gem 'awesome_print', '~> 1.8'
