@@ -7,9 +7,9 @@ end
 
 ruby '~> 2.5.1'
 
-gem 'rails', '~> 5.2.0'
-gem 'mysql2'
-gem 'puma', '~> 3.11'
+gem 'rails', '~> 5.2.1'
+gem 'mysql2', '~> 0.4.5'
+gem 'puma', '~> 3.12'
 
 gem 'active_model_serializers', '~> 0.10.7'
 gem 'bootsnap', '~> 1.3', require: false

@@ -1,6 +1,6 @@
 ![Logo](https://user-images.githubusercontent.com/312873/35063615-acf68302-fbd8-11e7-91c5-0b3b6f5966c4.png)
 =
-[![Build Status](https://travis-ci.org/snibox/snibox.svg?branch=master)](https://travis-ci.org/snibox/snibox)
+[![Build Status](https://semaphoreci.com/api/v1/snibox/snibox/branches/master/badge.svg)](https://semaphoreci.com/snibox/snibox)
 [![Maintainability](https://api.codeclimate.com/v1/badges/dde7ef3c752b360accc4/maintainability)](https://codeclimate.com/github/snibox/snibox/maintainability) 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/dde7ef3c752b360accc4/test_coverage)](https://codeclimate.com/github/snibox/snibox/test_coverage) 
 
@@ -19,7 +19,7 @@ Supports various programming languages, markdown, plain text.
 Click the image below to launch demo:
 > It may take up to 30 seconds to wake up free Heroku's server.
 
-[![screen shot 2018-07-16 at 12 21 27 am](https://user-images.githubusercontent.com/312873/42738580-a4bcbc9a-888e-11e8-997e-e8c7fc1af260.png)](https://snibox-demo.herokuapp.com/)
+[![screen shot 2018-09-03 at 9 12 11 pm](https://user-images.githubusercontent.com/312873/44998477-a879c600-afbe-11e8-8ab5-355f8a46b7f6.png)](https://snibox-demo.herokuapp.com/)
 
 ## Built with
 * Frontend: [Vue.js](https://vuejs.org/) + [Vuex](https://vuex.vuejs.org/)

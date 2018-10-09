@@ -1,8 +1,8 @@
 <!-- based on https://github.com/vuejs/vuepress/blob/master/lib/default-theme/SearchBox.vue -->
 
 <template>
-  <div class="search-box" v-if="renderSearchBox">
-    <p class="control has-icons-left">
+  <div class="search-box">
+    <p class="control has-icons-left" :class="{'has-icons-right': focused === false}">
       <input type="text" class="input search"
              @focus="focused = true"
              @blur="focused = false"
@@ -10,7 +10,8 @@
              @keyup.up="onUp"
              @keyup.down="onDown"
              v-model="query"/>
-      <span class="icon is-small is-left"><icon class="icon-search" type="search"></icon></span>
+      <span class="icon is-small is-left"><icon class="icon-search is-marginless" type="search"></icon></span>
+      <span class="icon is-small is-right" v-if="focused === false"><span class="icon-text">/</span></span>
     </p>
     <ul class="menu-list suggestions"
         v-if="showSuggestions"
@@ -66,6 +67,20 @@
       }
     },
 
+    mounted() {
+      document.addEventListener('keyup', e => {
+        if (e.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+          this.$el.querySelector('.search').focus()
+        }
+
+        if (e.key === 'Escape' && this.focused) {
+          this.query = ''
+          this.focusIndex = 0
+          this.$el.querySelector('.search').blur()
+        }
+      }, false)
+    },
+
     computed: {
       showSuggestions() {
         return (
@@ -78,10 +93,6 @@
       suggestions() {
         return this.query !== '' ?
             new Fuse(repository.$store.state.snippets, searchOptions).search(this.query).slice(0, this.count) : []
-      },
-
-      renderSearchBox() {
-        return typeof repository !== 'undefined'
       }
     },
 

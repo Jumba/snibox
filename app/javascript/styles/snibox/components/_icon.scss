@@ -9,3 +9,16 @@
     margin-bottom: 1px;
   }
 }
+
+.icon-text {
+  .search-box & {
+    color: $input-icon-color !important;
+    border: 1px solid $input-icon-color;
+    height: 1.2rem;
+    width: 1.2rem;
+    text-align: center;
+    line-height: 1rem;
+    border-radius: $radius-small;
+    font-size: 0.8rem;
+  }
+}
