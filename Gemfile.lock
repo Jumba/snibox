@@ -1,9 +1,9 @@
 GIT
   remote: git@github.com:websend/gatekeeper
-  revision: b4843f4a2b893ddeb41b76bc57ddc1345fc26ed2
-  tag: r5av1.3.5
+  revision: dc20be40553d9f12bf59ea6682812520fe0f4166
+  tag: r5av1.3.6
   specs:
-    gatekeeper (1.3.5)
+    gatekeeper (1.3.6)
       omniauth-microsoft_v2_auth
       rails (~> 5)
       sass-rails
