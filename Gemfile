@@ -18,7 +18,7 @@ gem 'dotenv-rails', '~> 2.5'
 gem 'uglifier', '~> 4.1'
 gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
 
-gem 'gatekeeper', git: 'git@github.com:websend/gatekeeper', tag: 'r5av1.3.6'
+gem 'gatekeeper', git: 'git@github.com:websend/gatekeeper', tag: 'r5av1.3.8'
 gem 'omniauth-microsoft_v2_auth', git: 'git@github.com:websend/omniauth-microsoft_v2_auth.git'
 
 group :development do
